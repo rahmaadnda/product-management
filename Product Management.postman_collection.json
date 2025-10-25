@@ -29,7 +29,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/search?q=baju",
+					"raw": "{{baseURL}}/search?q=kopi",
 					"host": [
 						"{{baseURL}}"
 					],
@@ -39,7 +39,7 @@
 					"query": [
 						{
 							"key": "q",
-							"value": "baju"
+							"value": "kopi"
 						}
 					]
 				}
@@ -75,6 +75,23 @@
 					],
 					"path": [
 						"clear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1"
 					]
 				}
 			},
