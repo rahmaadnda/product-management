@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class ProductService {
@@ -58,6 +60,10 @@ public class ProductService {
         return newProducts.size();
     }
 
+    public Product getProductById(int id) {
+        return productRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
+    }
 
     public List<Product> searchProducts(String query) {
         return productRepository.findByNamaProdukContainingIgnoreCaseOrKategoriContainingIgnoreCase(query, query);

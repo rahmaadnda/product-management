@@ -40,4 +40,9 @@ public class ProductController {
         productService.clearAllProducts();
         return Map.of("message", "Semua data telah dihapus.");
     }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable("id") int id) {
+        return productService.getProductById(id);
+    }
 }
